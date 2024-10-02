@@ -63,6 +63,8 @@
     "random": "cpp",
     "limits": "cpp",
     "valarray": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "array": "cpp",
+    "string": "cpp"
   }
 }
