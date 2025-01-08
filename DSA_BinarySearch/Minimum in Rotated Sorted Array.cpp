@@ -8,7 +8,7 @@ int searchmin(vector<int> nums){
 }
 int main() {
    vector<int> nums={4,5,6,7,0,1,2};
-   bool minele=searchmin(nums);
+   int minele=searchmin(nums);
    cout<<minele;
 
     return 0;
@@ -35,7 +35,7 @@ int searchmin(vector<int> nums){
 }
 int main() {
    vector<int> nums={4,5,6,7,0,1,2};
-   bool minele=searchmin(nums);
+   int minele=searchmin(nums);
    cout<<minele;
 
     return 0;
