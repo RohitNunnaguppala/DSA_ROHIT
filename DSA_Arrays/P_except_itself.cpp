@@ -1,33 +1,34 @@
+
 #include<bits/stdc++.h>
 using namespace std;
 
-vector<int> P_except_itself(vector<int> &a){
-    int n = a.size();
-    vector<int> answer(n, 1);
+vector<int> productExceptSelf(vector<int>& nums) {
+        int n=nums.size();
+        vector<int> left(n);
+        vector<int> right(n);
+        vector<int> ans(n);
 
-    int leftProduct = 1;
-    for (int i = 0; i < n; ++i) {
-        answer[i] = leftProduct;
-        leftProduct *= a[i];
-    }
+        left[0]=1;
+        for(int i=1;i<n;i++){
+            left[i]=left[i-1]*nums[i-1];
+        }
 
-    int rightProduct = 1;
-    for (int i = n - 1; i >= 0; --i) {
-        answer[i] *= rightProduct;
-        rightProduct *= a[i];
-    }
+        right[n-1]=1;
+        for(int i=n-2;i>-1;i--){
+            right[i]=right[i+1]*nums[i+1];
+        }
 
-    return answer;
+        for(int i=0;i<n;i++){
+            ans[i]=left[i]*right[i];
+        }
+        return ans;
 }
-
-int main(){
-    vector<int> a={1,2,3,4};
-    vector<int> result =  P_except_itself(a);
     
-    for (int num : result) {
-        cout << num << " ";
+int main() {
+    vector<int> nums={1,2,3,4};
+    vector<int> res=productExceptSelf(nums);
+    for(int i=0;i<res.size();i++){
+        cout<<res[i];
     }
-    cout << endl;
-
     return 0;
 }
