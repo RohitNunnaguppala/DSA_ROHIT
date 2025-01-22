@@ -1,25 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int buyandsell(vector<int> &a){
-    if(a.size()==0) return 0;
-    int n=a.size();
-
-    vector<int> fut(n);
-    fut[n-1]=a[n-1];
-    for(int i=n-1;i>=0;--i){
-        fut[i]=max(a[i],fut[i+1]);
-    }
-
-    int maxprofit=0;
-
-     for(int i=0;i<n;i++){
-        int profit=fut[i+1]-a[i];
-        if(profit>maxprofit){
-            maxprofit=profit;
+int buyandsell(vector<int> &prices){
+    int maxpro=0;
+        int mini=prices[0];
+        for(int i=0;i<prices.size();i++){
+            int curpro=prices[i]-mini;
+            maxpro=max(maxpro,curpro);
+            mini=min(prices[i],mini);
         }
-     }
-     return maxprofit;
+        return maxpro;
 }
 
 int main() {
