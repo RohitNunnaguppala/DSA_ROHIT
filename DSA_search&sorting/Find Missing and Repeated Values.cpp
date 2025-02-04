@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> findRepeatingAndMissing(vector<vector<int>>& grid) {
+vector<int> findRepeatingAndMissing(vector<vector<int>>& mat) {
     int sz = mat.size();                        
     unordered_set<int> seen;                      
     int tot = 0;                                  
