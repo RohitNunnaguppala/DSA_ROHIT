@@ -47,6 +47,19 @@ bool detectCycle(Node* head) {
     return false;
 }
 
+bool hasCycle(Node *head) {
+        Node* temp=head;
+        unordered_map<Node*,int> nodemap;
+        while(temp!=nullptr){
+            if(nodemap.find(temp)!=nodemap.end()){
+                return true;
+            }
+            nodemap[temp]=1;
+            temp=temp->next;
+        }
+        return false;
+    }
+
 int main() {
     vector<int> arr = {1, 2, 3, 4, 5};
     Node* head = convertArrToLL(arr);
