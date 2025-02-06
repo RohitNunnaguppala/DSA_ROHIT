@@ -67,6 +67,7 @@
     "array": "cpp",
     "string": "cpp",
     "*.tcc": "cpp",
-    "regex": "cpp"
+    "regex": "cpp",
+    "iostream": "cpp"
   }
 }
