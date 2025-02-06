@@ -53,7 +53,7 @@ Node* removeDuplicates(Node* head)     {
         
         temp = temp->next;
     }
-    
+    // Return the updated head
     return head;
 }
 
