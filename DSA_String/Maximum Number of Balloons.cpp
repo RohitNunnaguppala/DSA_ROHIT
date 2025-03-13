@@ -11,5 +11,6 @@ class Solution {
             else if (c == 'n') n++;
         }
             return min({b, a, l / 2, o / 2, n});
+        
         }
     };
