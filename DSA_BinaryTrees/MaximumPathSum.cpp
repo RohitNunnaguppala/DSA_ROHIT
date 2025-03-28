@@ -34,5 +34,4 @@ int findMaxPathSum(TreeNode* root, int &maxi) {
         int maxi = INT_MIN;
         findMaxPathSum(root, maxi);
         return maxi;
->>>>>>> fdadff0f2f3ef37de11bd8730e2370725528393a
-    }
+}
