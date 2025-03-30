@@ -11,6 +11,9 @@ node* buildtree(vector<int> &preorder, vector<int> &inorder){
 
 node* buildtree(vector<int> &preorder,int prestart,int preend,vector<int> &inorder,int instart,int inend,map<int,int> inmap){
     node* root=new node(preorder[prestart]);
+    if(prestart==preend){
+        return root;
+    }
 
     int inroot=inmap[root->val];
     int numsleft=inroot-instart;
@@ -18,4 +21,5 @@ node* buildtree(vector<int> &preorder,int prestart,int preend,vector<int> &inord
     root->left=buildtree(preorder,prestart+1,prestar+numsleft,inorder,instart,inroot-1,inmap);
     root->right=buildtree(preorder,prestart+numsleft+1,preend,inorder,inroot+1,inend,inmap);
     return root;
+
 }
