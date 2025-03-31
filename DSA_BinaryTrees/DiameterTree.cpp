@@ -6,12 +6,12 @@ int diameterBT(node* root){
     return diameter;
 }
 
-int height(node* root,int &diameter){
-    if(root==nullptr){
+int height(node* node,int &diameter){
+    if(node==nullptr){
         return 0;
     }
-    int lh=height(root->left,diameter);
-    int rh=height(root->right,diameter);
+    int lh=height(node->left,diameter);
+    int rh=height(node->right,diameter);
     diameter=max(diameter,lh+rh);
     return 1+max(lh+rh);
 }
