@@ -22,8 +22,10 @@ void solve() {
         cnt++;
       }
     }
-    cout<<cnt<<endl;
+    cout<<cnt<<"\n";
 }
+
+
 
 int main() {
     int t;
