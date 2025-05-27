@@ -54,3 +54,6 @@ bool canPartition(int n, vector<int>& arr) {
         return dp[n - 1][k];
     }
 }
+
+//space-optimization
+
