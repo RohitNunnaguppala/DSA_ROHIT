@@ -122,9 +122,41 @@ Node* inserttail(Node* head,int val){
     return head;
 }
 
-Node* insertkthpos(Node* head,int val){
-    
+Node* insertkthpos(Node* head, int val, int k) {
+    if(k == 1){
+        Node* temp = new Node(val, head);
+        return temp;
+    }
+
+    Node* temp = head;
+    int count = 0;
+
+    while(temp != nullptr){
+        count++;
+        if(count == k-1){
+            Node* newNode = new Node(val, temp->next);
+            temp->next = newNode;
+            break;
+        }
+        temp = temp->next;
+    }
+    return head;
 }
+
+Node* insertAfterVal(Node* head, int targetVal, int newVal) {
+    Node* temp = head;
+    while(temp != nullptr){
+        if(temp->data == targetVal){
+            Node* newNode = new Node(newVal, temp->next);
+            temp->next = newNode;
+            break;
+        }
+        temp = temp->next;
+    }
+    return head;
+}
+
+
 int main(){
     vector<int> a={2,3,4,5};
     Node* head=convertArr2LL(a);
